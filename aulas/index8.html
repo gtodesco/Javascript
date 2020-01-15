@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+         <!--Codificação. Se no DOM não houver um caractere especial, e vier uma string com caractere especial do javascript, ele mostrará errado. -->
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <input type="text" name="nome" id="nome" class="nome" />
+            <button class="botao">Adicionar</button>
+        </div>
+
+        <script> 
+
+            var nomeElement = document.getElementById("nome");
+            console.log(nomeElement);
+
+            var inputElement = document.getElementsByTagName("input"); // Array
+            console.log(inputElement);
+
+            var classElement = document.getElementsByClassName("nome"); // Array
+            console.log(classElement);
+
+            var queryElement = document.querySelector("div#app input"); // Caminho
+            console.log(queryElement);
+
+            queryElement = document.querySelector("input[name='nome']"); // Atributo
+            console.log(queryElement);
+
+            queryElement = document.querySelector("input"); // Primeiro input do DOM
+            console.log(queryElement);
+
+            var btnElement = document.querySelector("button.botao"); // Classe
+
+            btnElement.onclick = function() {
+                var text = queryElement.value; // Pegando o que foi digitado no campo
+                alert(text);
+            }
+
+        </script>
+    </body>
+</html>

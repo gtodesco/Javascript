@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+
+        <script> 
+
+           var sexo = "M", idade = 23;
+
+           if(sexo === "M" && idade >= 18){
+               console.log("OK");
+           }
+
+           idade = 10;
+           if(sexo === "M" || idade >= 18){
+               console.log("OK");
+           }
+
+           sexo = "F";
+           if(sexo !== "M"){
+               console.log("OK");
+           }
+
+           sexo = "M";
+           if(sexo === "M"){
+               masculino = true;
+           } else {
+               masculino = false;
+           }
+           console.log(masculino);
+
+           // resumido
+           var masculino = sexo === "M";
+           console.log(masculino);
+
+           // condição ternária
+           var retorno = (sexo === "M") ? "Masculino" : "Feminino";
+
+           console.log(retorno);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <button id="btnCriarElemento">Criar elemento</button>
+        </div>
+
+        <script> 
+    
+            var btnCriarElemento = document.querySelector("#btnCriarElemento");
+
+            btnCriarElemento.onclick = function() {
+                criarQuadradoVermelho(); 
+            }
+
+            function criarQuadradoVermelho() {
+                // Cria elemento
+                var quadrado = document.createElement('div');
+
+                // Define propriedades CSS
+                quadrado.style.height = 100;
+                quadrado.style.width = 100;
+                quadrado.style.backgroundColor = "#f00";
+
+                // Quando passar o mouse por cima do quadrado, irá alterar a cor
+                quadrado.onmouseover = function() {
+                    var novaCor = getRandomColor();
+
+                    quadrado.style.backgroundColor = novaCor;
+                }
+
+                // Vincula elemento
+                var elementoPrincipal = document.querySelector("#app");
+                elementoPrincipal.appendChild(quadrado);
+            }
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+
+                return color;
+            }
+
+        </script>
+    </body>
+</html>

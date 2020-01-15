@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+            <ul id="list"></ul>
+        </div>
+
+        <script> 
+    
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            for(var i = 0; i < nomes.length; i++){
+                criarTopico(nomes[i]);
+            }
+
+            function adicionar() {
+
+                var input = document.querySelector("input[name='nome']");
+
+                criarTopico(input.value);
+
+                input.value = "";
+            }
+
+            function criarTopico(texto) {
+                
+                var topic = document.createElement('li');
+
+                topic.textContent = texto;
+
+                document.querySelector("#list").appendChild(topic);
+            }
+            
+        </script>
+    </body>
+</html>

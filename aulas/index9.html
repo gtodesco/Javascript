@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- <a href="globoesporte.com">Acessar o globoesporte</a> -->
+            <input id="nome" />
+        </div>
+
+        <script> 
+
+            var linkElement = document.createElement('a');
+
+            linkElement.setAttribute('href', 'https://globoesporte.globo.com/'); // poderia ser linkElement.href
+            linkElement.setAttribute('title', 'Site do globoesporte');
+
+            var textElement = document.createTextNode('Acessar o globoesporte');
+            
+            linkElement.appendChild(textElement); // adiciona textElement como filho do linkElement
+
+            var containerElement = document.getElementById("app");
+
+            containerElement.appendChild(linkElement);
+
+            var inputElement = document.querySelector('#nome');
+            
+            containerElement.removeChild(inputElement); // Removendo elemento do DOM
+
+        </script>
+    </body>
+</html>
